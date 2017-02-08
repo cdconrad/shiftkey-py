@@ -19,8 +19,7 @@ develop Django do this professionally (though not necessarily masterfully).
 This tutorial is very much a work in progress and is designed to be used by both
 the Faculty of Computer Science at Dalhousie, and the wider community. For the
 2017 run through, we will be collaborating with the students from CSCI 2133 and
-adding more content each week. You can also look at the final product of this 
-tutorial at http://femto.cs.dal.ca/profileGrabber/ 
+adding more content each week.
 
 ABOUT YOUR INSTRUCTOR: COLIN CONRAD
 
