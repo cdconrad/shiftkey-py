@@ -12,7 +12,7 @@
     <!-- The nav div is the navbar. Make sure this is right... seems like the
     links are broken and the color is wrong. You can find the broken links in the
     href="" for each li or the logo -->
-    <nav class="blue">
+    <nav class="purple lighten-2">
       <div class="nav-wrapper container">
         <a href="/profileGrabber/" class="brand-logo">Twitter Profiler</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -39,7 +39,8 @@
             stuff at http://materializecss.com/. For now, try adding the features
             waves-effect waves-light btn red-->
             <button class="" type="submit" name="action">Submit
-              <i class="material-icons right">send</i>
+              <!-- change this to something better. For example "send"-->
+              <i class="material-icons right">add</i>
             </button>
           </div>
         </form>
@@ -48,7 +49,7 @@
       be ill defined-->
       <div class="row">
         <!-- Here's a missing column. Try adding "col m3"-->
-        <div class="col m3">
+        <div class="">
           <h4>Fake Donald Trump</h4>
           <span style="font-weight:bold;">@fakeDonaldTrump</span>
           <span>Murica</span>
@@ -62,7 +63,7 @@
           <div id="modal1" class="modal">
             <!-- The modal is defined here. This is the feature that renders
             when you click the button. Add "modal-content" to the class-->
-            <div class="modal-content">
+            <div class="">
               <h4>Influencers</h4>
               <p>Influencers are people who start trends on Twitter. Typically these users have a large number of followers, and a large number of people actually read what they post. We can create any number of algorithms to determine influencers, but we kept it simple for this tutorial: people with over 500 followers.</p>
             </div>
@@ -106,7 +107,8 @@
 
     </div>
     <!-- Materialize has a special footer tag that renders a nice-looking footer.
-    This looks fine for now. -->
+    This looks fine for now. When we bring these into Django we should keep this
+    one template that is used by all the pages, rather than rewriting it each time.-->
     <footer class="page-footer blue">
           <div class="container">
             <div class="row">
@@ -135,13 +137,12 @@
     order for Materialize to render its cool features. Note how it is sandwiched
     between <script> tags. Try adding src = "https://code.jquery.com/jquery-2.1.1.min.js".
     Also, the materialize JS document is referenced in the footer here-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src=""></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     <!-- Currently our modal does not work. We need to add some custom javascript
     for this. check out http://materializecss.com/modals.html-->
     <script>
       $(document).ready(function(){
-        $('.modal').modal();
         //We are missing two things. The code for the sideNav is written below.
         //We also need to add something for the modal.
         //$(".button-collapse").sideNav();
