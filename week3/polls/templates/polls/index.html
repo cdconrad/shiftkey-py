@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    {% load staticfiles %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:100,300" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to the completed polls app!</h1>
+      <img class = "col-md-6" src="{% static 'polls/images/Justin-Bieber-2015.jpg' %}">
+      <div class="col-md-6">
+	<h2>Who do you think is the greatest Canadian?</h2>
+	{% if latest_question_list %}
+	<ul>
+	  {% for question in latest_question_list %}
+	  <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+	  {% endfor %}
+	</ul>
+	{% else %}
+	<p>No polls are available.</p>
+	{% endif %}
+      </div>
+      
+      
+    </div>
+  </body>
+</html>

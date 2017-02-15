@@ -1,0 +1,8 @@
+li a {
+    color: green;
+}
+
+body {
+    background: white url("images/colin-stache.jpg") no-repeat right bottom;
+}
+

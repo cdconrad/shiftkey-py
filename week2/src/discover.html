@@ -3,7 +3,7 @@
     <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css using the same CDN as index.html-->
-      <link rel="stylesheet" href="">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
       <link rel="stylesheet" type="text/css" href="assets/style.css"/>
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -17,12 +17,12 @@
         <a href="/profileGrabber/" class="brand-logo">Twitter Profiler</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="/profileGrabber/index.html">Home</a></li>
-          <li><a href="chinchillas.html">Discover</a></li>
-          <li><a href="not-trolling.html">Collection</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="discover.html">Discover</a></li>
+          <li><a href="collections.html">Collection</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-          <li><a href="/profileGrabber">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="discover.html">Discover</a></li>
           <li><a href="collection.html">Collection</a></li>
         </ul>
@@ -38,9 +38,9 @@
             <!-- The button seems messed up. You can figure out some of the
             stuff at http://materializecss.com/. For now, try adding the features
             waves-effect waves-light btn red-->
-            <button class="" type="submit" name="action">Submit
+            <button class="waves-light btn red" type="submit" name="action">Submit
               <!-- change this to something better. For example "send"-->
-              <i class="material-icons right">add</i>
+              <i class="material-icons right">send</i>
             </button>
           </div>
         </form>
@@ -49,7 +49,7 @@
       be ill defined-->
       <div class="row">
         <!-- Here's a missing column. Try adding "col m3"-->
-        <div class="">
+        <div class="col m3">
           <h4>Fake Donald Trump</h4>
           <span style="font-weight:bold;">@fakeDonaldTrump</span>
           <span>Murica</span>
@@ -63,7 +63,7 @@
           <div id="modal1" class="modal">
             <!-- The modal is defined here. This is the feature that renders
             when you click the button. Add "modal-content" to the class-->
-            <div class="">
+            <div class="modal-content">
               <h4>Influencers</h4>
               <p>Influencers are people who start trends on Twitter. Typically these users have a large number of followers, and a large number of people actually read what they post. We can create any number of algorithms to determine influencers, but we kept it simple for this tutorial: people with over 500 followers.</p>
             </div>
@@ -137,12 +137,13 @@
     order for Materialize to render its cool features. Note how it is sandwiched
     between <script> tags. Try adding src = "https://code.jquery.com/jquery-2.1.1.min.js".
     Also, the materialize JS document is referenced in the footer here-->
-    <script type="text/javascript" src=""></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     <!-- Currently our modal does not work. We need to add some custom javascript
     for this. check out http://materializecss.com/modals.html-->
     <script>
       $(document).ready(function(){
+        $('.modal').modal();
         //We are missing two things. The code for the sideNav is written below.
         //We also need to add something for the modal.
         //$(".button-collapse").sideNav();
