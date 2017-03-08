@@ -1,0 +1,71 @@
+{% extends "profileGrabber/template.html" %}
+
+{% block content %}
+
+{% if profile %}
+<h3>Discover users to add to your list</h3>
+<div class="row">
+  <form action="" method="post">
+    {% csrf_token %}
+    <div class="input-field col m6">
+      <label for="twitter_handle">Find a new profile (eg. "potus") </label>
+      <input class = "col m6" id="twitter_handle" type="text" name="twitter_handle" maxlength="100" required value="{{ profile.screen_name }}">
+      <button class="btn waves-effect red" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+  </form>
+</div>
+
+<div class="row">
+  <div class="col m3">
+    <h4>{{ profile.name }}</h4>
+    <span style="font-weight:bold;">{{ profile.screen_name }}</span>
+    <span>{{ profile.location }}</span>
+  </div>
+  <div class="col m3">
+    <h4>Influencer: {{ influencer }}</h4>
+    <!-- Modal Trigger -->
+    <a class="waves-effect waves-light btn green" href="#modal1">What's this?</a>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Influencers</h4>
+        <p>Influencers are people who start trends on Twitter. Typically these users have a large number of followers, and a large number of people actually read what they post. We can create any number of algorithms to determine influencers, but we kept it simple for this tutorial: people with over 500 followers.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+      </div>
+    </div>
+  </div>
+  <div class="col m3">
+    <h4>Followers: {{ profile.followers_count }}</h4>
+    <span style="font-weight:bold;">Following:</span>
+    <span>{{ profile.friends_count }}</span>
+  </div>
+  <div class="col m3">
+    <form action="" method="post">
+      {% csrf_token %}
+      <input type="hidden" name="push_source" value="Web">
+      <input type="hidden" name="push_handle" value="{{ profile.screen_name }}">
+      <button class="btn-floating btn-large waves-effect waves-light red" type="submit" name="action">
+          <i class="material-icons">add</i>
+      </button>
+    </form>
+  </div>
+</div>
+<div class="row">
+  <div class="col m12">
+    <blockquote>
+      <p>{{ profile.description }}</p>
+      <footer>{{ profile.screen_name }}<cite title="Source Title"> Profile Summary </cite></footer>
+    </blockquote>
+  </div>
+</div>
+
+{% else %}
+    <p>Error!</p>
+{% endif %}
+
+{% endblock %}

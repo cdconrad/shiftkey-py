@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404
-
 from .models import SavedUser
 
 def index(request):
@@ -13,11 +12,15 @@ def discover(request):
         'profile': profile,
         'influencer': influencer,
     }
+
     return render(request, 'profileGrabber/discover.html', context)
+
 
 def collection(request):
     saved_users = SavedUser.objects.all()
+
     context = {
         'saved_users': saved_users,
     }
+
     return render(request, 'profileGrabber/collection.html', context)

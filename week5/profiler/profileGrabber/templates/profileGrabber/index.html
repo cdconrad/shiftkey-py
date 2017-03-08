@@ -1,0 +1,43 @@
+{% extends "profileGrabber/template.html" %}
+{% load static %}
+
+{% block content %}
+
+  <h1>Twitter Profiler</h1>
+  <div class="row">
+    <div class="col m6">
+      <img style="display: block; margin-left: auto; margin-right: auto;" src="{%static 'twitter.svg' %}">
+    </div>
+    <div class="col m6">
+      <ul class="collapsible" data-collapsible="accordion">
+        <li>
+          <div class="collapsible-header active"><i class="material-icons">info_outline</i>Start with the basics</div>
+          <div class="collapsible-body"><p>This tutorial assumes that you are familiar with object oriented programing. It also helps to know html/css, which you can learn online on your own.</p></div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">whatshot</i>Code like crazy</div>
+          <div class="collapsible-body"><p>Though we only meet for 90 minutes a week, it will take many people at least 10 hours each week (for five weeks) to become famililar enough with these skills to pull a project off.</p></div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">grade</i>Master the Django stack</div>
+          <div class="collapsible-body"><p>Whether this is your first stack or one of many, Django is a good stack to master for applications that work with data. Read more about pythons powerful data science libraries like NumPy, NLTK, SciPy, Pandas... </p></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col m4" style="text-align: center;">
+      <i class="large material-icons">perm_identity</i>
+      <h5>Discover twitter profiles<h5>
+    </div>
+    <div class="col m4 icon-prievew" style="text-align: center;">
+      <i class="large material-icons">group_work</i>
+      <h5>Add profiles to a list<h5>
+    </div>
+    <div class="col m4" style="text-align: center;">
+      <i class="large material-icons">done</i>
+      <h5>Learn the Django stack!</h5>
+    </div>
+  </div>
+
+{% endblock %}
